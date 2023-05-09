@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Corrécteur de grammaire</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav><ul>
+            <li><a href="./index.html">Générateur de Discours </a></li>
+            <li><a href="./correcteur.html" class="active">Correcteur Orthographique</a></li>
+            <li><a href="./traducteur.html">Traducteur</a></li>
+        </ul></nav>
+        <h1>Correcteur de grammaire</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Instructions</h2>
+            <p>Entrez votre text et cliquez sur le bouton valider pour pouvoir corriger vos fautes d'orthographes. (max : 300 mots)</p>
+        </section>
+
+        <section>
+            <textarea id="subject"></textarea>
+        </section>
+        <button id="generateButton">Valider</button>
+        <section>
+            <h2>Correcteur généré</h2>
+            <textarea id="generatedSpeech" readonly></textarea>
+        </section>
+    </main>
+    <script src="./scripts/correcteur.js"></script>
+</body>
+</html>

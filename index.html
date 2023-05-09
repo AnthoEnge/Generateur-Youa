@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Création de discours avec ChatGPT-4</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav><ul>
+            <li><a href="./index.html" class="active">Générateur de Discours </a></li>
+            <li><a href="./correcteur.html" activ>Correcteur Orthographique</a></li>
+            <li><a href="./traducteur.html">Traducteur</a></li>
+        </ul></nav>
+        <h1>Création de discours personnalisé</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Instructions</h2>
+            <p>Entrez votre sujet et quelques points clés, puis cliquez sur "Générer un discours" pour obtenir un discours généré sur l'option et le langage souhaité.</p>
+        </section>
+
+        <section id="test">
+            <h2>Créez votre discours</h2>
+            <div id="Option">
+                <div class="occation">
+                    <label>Thèmes</label>
+                    <select id="occasion">
+                        <option value="anniversaire">Anniversaire</option>
+                        <option value="mariage">Mariage</option>
+                        <option value="discours_professionnel">Discours professionnel</option>
+                        <option value="demission">Lettre de demission</option>
+                        <option value="motivation">Lettre de motivation</option>
+                    </select>
+                </div>
+                <div class="chaleur">
+                    <label>Langage souhaité</label>
+                    <select id="chaleur">
+                        <option value="tfaible">Banlieusard</option>
+                        <option value="faible">Humoristique</option>
+                        <option value="moyen" selected>Francais courant</option>
+                        <option value="haut">Langage Soutenue</option>
+                        <option value="haut">Langage littéraire </option>
+                    </select>
+                </div>
+            </div>
+            <label for="subject">Sujet :</label>
+            <input type="text" id="subject" name="subject" placeholder="Entrez le sujet du discours">
+            <label for="keywords">Points clés :</label>
+            <input type="text" id="keywords" name="keywords" placeholder="Entrez quelques points clés">
+        </section>
+        <button id="generateButton">Valider</button>
+        <section>
+            <h2>Discours généré</h2>
+            <textarea id="generatedSpeech" readonly></textarea>
+        </section>
+    </main>
+    <script src="./scripts/scripts.js"></script>
+</body>
+</html>

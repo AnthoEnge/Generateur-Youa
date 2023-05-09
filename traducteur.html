@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Traducteur</title>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+</head>
+<body>
+    <header>
+        <nav><ul>
+            <li><a href="./index.html">Générateur de Discours </a></li>
+            <li><a href="./correcteur.html">Correcteur Orthographique</a></li>
+            <li><a href="./traducteur.html" class="active">Traducteur</a></li>
+        </ul></nav>
+        <h1>Traducteur</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Instructions</h2>
+            <p>Entrez votre text,  choisissez avec quel langage vous désirez le traduire puis valider.</p>
+        </section>
+
+        <section>
+            <div class="occation">
+                <label>Langue souhaité</label>
+                <select id="langue">
+                    <option value="zh">Chinois (mandarin)</option>
+                    <option value="es">Espagnol</option>
+                    <option value="en" selected>Anglais</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ar">Arabe</option>
+                    <option value="pt">Portugais</option>
+                    <option value="bn">Bengali</option>
+                    <option value="ru">Russe</option>
+                    <option value="ja">Japonais</option>
+                    <option value="de">Allemand</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+
+            <textarea id="speech"></textarea>
+        </section>
+        <button id="generateButton">Valider</button>
+        <section>
+            <h2>Text généré</h2>
+            <textarea id="generatedSpeech" readonly></textarea>
+        </section>
+    </main>
+    <script src="./scripts/traducteur.js"></script>
+</body>
+</html>
