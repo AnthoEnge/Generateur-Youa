@@ -1,11 +1,12 @@
+let apiKey = "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"
 document.addEventListener("DOMContentLoaded", function () {
-    const generateSpeech = async (prompt) => {
-      const response = await fetch("http://localhost:8081/https://api.openai.com/v1/engines/text-davinci-002/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: ``,
-        },
+  const generateSpeech = async (prompt) => {
+    const response = await fetch("https://api.openai.com/v1/engines/text-davinci-002/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
         body: JSON.stringify({
           prompt: prompt,
           max_tokens: 300,
