@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Corrécteur de grammaire</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.remixicon.com/releases/v2.5.0/remixicon.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,20 +19,23 @@
         </ul></nav>
         <h1>Correcteur de grammaire</h1>
     </header>
-    <main>
+    <main id="center">
         <section>
             <h2>Instructions</h2>
             <p>Entrez votre text et cliquez sur le bouton valider pour pouvoir corriger vos fautes d'orthographes. (max : 300 mots)</p>
         </section>
 
-        <section>
-            <textarea id="subject"></textarea>
-        </section>
+        <div class="area">
+            <div class="first">
+                <h2>Text à corriger :</h2> 
+                <textarea id="speech"></textarea>
+            </div>
+            <div class="first">
+                <h2>Text généré :</h2>
+                <textarea id="generatedSpeech" readonly></textarea>
+            </div>
+        </div>
         <button id="generateButton">Valider</button>
-        <section>
-            <h2>Correcteur généré</h2>
-            <textarea id="generatedSpeech" readonly></textarea>
-        </section>
     </main>
     <script src="./scripts/correcteur.js"></script>
 </body>
