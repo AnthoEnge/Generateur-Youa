@@ -27,9 +27,6 @@ ul {
 h1 {
     margin: 20px ;
 }
-h2 {
-    margin: 5px 8px
-}
 main {
     padding: 2em;
 }
@@ -72,6 +69,11 @@ button {
     margin: 0 auto;
     width: 50%;
 }
+#options-container {
+    position: relative;
+    padding: 0 5px;
+    height: 320px;
+}
 
 button:hover {
     background-color: #45a049;
@@ -100,7 +102,11 @@ textarea {
     text-align: center;
     justify-content: center;
     display: flex;
-    min-width: 100px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
 
 }
 

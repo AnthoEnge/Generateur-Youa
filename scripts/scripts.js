@@ -56,7 +56,8 @@ function clickOnGenerate(config){
       const input2 = document.querySelector(".input2").value;
       const input3 = document.querySelector(".input").value;
       if ( !input || !input1 || !input2) {
-        alert('Remplissez les champs requis')
+        removeLoadButton(nameButton)
+        return alert('Remplissez les champs requis')
       } else {
         prompt = configMessage + `Génére un discours d'anniversaire pour ${input}, qui célèbre aujourd'hui son ${input1} anniversaire. Lien avec la personne: ${input2}, et c'est un moment spécial pour célébrer cette journée importante dans sa vie. Composez un discours chaleureux et inspirant pour lui exprimer vos vœux d'anniversaire et partager des souvenirs et des anecdotes qui lui sont chers. Soyez attentionné, sincère et assurez-vous de transmettre toute votre affection et votre joie lors de cette occasion spéciale, m'ont prénom = ${input3}.
         `
@@ -70,7 +71,8 @@ function clickOnGenerate(config){
       const input3 = document.querySelector(".input3").value;
       const input4 = document.querySelector(".input4").value;
       if ( !input || !input1 || !input2 || !input3 || !input4) {
-        alert('Remplissez les champs requis')
+        removeLoadButton(nameButton)
+        return alert('Remplissez les champs requis')
       } else {
         prompt = configMessage + `Génére un discours de mariage en ayant ses informations : "Nom du marié" = ${input} , "nom de la mariée" = ${input1} , "ma relation avec le couple" = ${input2} , Détails sur la cérémonie ou la récéption du mariage = ${input3}, "qualitée ou souhait spécifique" = ${input4}
         `
@@ -83,7 +85,8 @@ function clickOnGenerate(config){
       const input2 = document.querySelector(".input2").value;
       const input3 = document.querySelector(".input3").value;
       if ( !input || !input1 || !input2 || !input3) {
-        alert('Remplissez les champs requis')
+        removeLoadButton(nameButton)
+        return alert('Remplissez les champs requis')
       } else {
         prompt = configMessage +  `Génére un discours de ${input}, pour ${input1} ,publique ciblé :  ${input2}, le thèmes et les sujet que je souhaite abordée ${input3}.
         `
@@ -97,7 +100,8 @@ function clickOnGenerate(config){
       const input3 = document.querySelector(".input3").value;
       const input4 = document.querySelector(".input4").value;
       if ( !input || !input1 || !input2 || !input3 || !input4) {
-        alert('Remplissez les champs requis')
+        removeLoadButton(nameButton)
+        return alert('Remplissez les champs requis')
       } else {
         prompt = configMessage +  `Génére moi une lettre de démission en sachant ce-ci, mon prenom et nom = ${input} , nom de l'entreprise = ${input1} , mon poste actuel = ${input2} , date de départ souhaité = ${input3}, le raison de ma départ = ${input4}.
         `
@@ -110,7 +114,8 @@ function clickOnGenerate(config){
       const input2 = document.querySelector(".input2").value;
       const input3 = document.querySelector(".input3").value;
     if ( !input || !input1 || !input2 || !input3) {
-        alert('Remplissez les champs requis')
+      removeLoadButton(nameButton)
+        return alert('Remplissez les champs requis')
       } else {
         prompt = configMessage + `Génére une lettre de motivation avec les informations suivante : mon nom prénom = ${input}, poste ou programme souhaité = ${input1} , m'on parcours académique ou profésionnel ${input2}, mes disponibilité pour une rencontre = ${input3}.
         `
@@ -233,9 +238,11 @@ function optionSelected(optionValue) {
 // Créer les boutons correspondant à chaque option
 options.forEach(function(option) {
   var buttonContainer = document.getElementById("button-container");
+  let instruction = document.querySelector('.instruction');
   var button = document.createElement("button");
   button.innerText = option.label;
   button.addEventListener("click", function() {
+    instruction.style.display = 'none'
     optionSelected(option.value);
     let config = option.value
     clickOnGenerate(config)
