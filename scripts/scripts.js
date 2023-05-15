@@ -170,7 +170,7 @@ function optionSelected(optionValue) {
     input1.placeholder = "Age de la personne";
     input2.placeholder = "Lien avec la personne";
     input2.placeholder = "Ton prénom";
-    button.innerText = "Envoyer le message d'anniversaire";
+    button.innerText = "Générer le message d'anniversaire";
       container.appendChild(h3);
       container.appendChild(input);
       container.appendChild(input1);
@@ -184,7 +184,7 @@ function optionSelected(optionValue) {
     input2.placeholder = "Votre relation avec le couple";
     input3.placeholder = "Des détails sur la cérémonie ou la réception de mariage";
     input4.placeholder = "Des qualités ou des souhaits spécifiques pour le couple";
-    button.innerText = "Envoyer les vœux de mariage";
+    button.innerText = "Générer les vœux de mariage";
       container.appendChild(input);
       container.appendChild(input1);
       container.appendChild(input2);
@@ -198,7 +198,7 @@ function optionSelected(optionValue) {
     input1.placeholder = "L'occasion ou l'événement spécifique";
     input2.placeholder = "Le public cible (collègues, employès,clients..)";
     input3.placeholder = "Les thèmes ou les sujets que vous souhaitez aborder";
-    button.innerText = "Envoyer le discours professionnel";
+    button.innerText = "Générer le discours professionnel";
       container.appendChild(input);
       container.appendChild(input1);
       container.appendChild(input2);
@@ -213,7 +213,7 @@ function optionSelected(optionValue) {
     input2.placeholder = "Votre poste actuel";
     input3.placeholder = "Date de départ souhaitée";
     input4.placeholder = "Raison de la démission";
-    button.innerText = "Envoyer la lettre de démission";
+    button.innerText = "Générer la lettre de démission";
       container.appendChild(input);
       container.appendChild(input1);
       container.appendChild(input2);
@@ -227,7 +227,7 @@ function optionSelected(optionValue) {
     input1.placeholder = "Poste ou programme souhaité";
     input2.placeholder = "Votre parcours académique et professionnel";
     input3.placeholder = "Vos disponibilité pour une rencontre";
-    button.innerText = "Envoyer la lettre de motivation";
+    button.innerText = "Générer la lettre de motivation";
       container.appendChild(input);
       container.appendChild(input1);
       container.appendChild(input2);
