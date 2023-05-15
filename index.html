@@ -5,61 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Création de discours avec ChatGPT-4</title>
     <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="https://cdn.remixicon.com/releases/v2.5.0/remixicon.css">
+    <!-- <link rel="stylesheet" href="https://cdn.remixicon.com/releases/v2.5.0/remixicon.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <nav><ul>
+        <!-- <nav><ul>
             <li><a href="./index.html" class="active">Générateur de discours </a></li>
             <li><a href="./correcteur.html" activ>Correcteur orthographique</a></li>
             <li><a href="./traducteur.html">Traducteur</a></li>
-        </ul></nav>
+        </ul></nav> -->
         <h1>Création de discours personnalisés</h1>
     </header>
     <main id="center">
         <section>
-            <h2>Instructions</h2>
-            <p>Entrez votre sujet et quelques points clés, puis cliquez sur 'Valider' pour obtenir un discours généré dans le thèmes et le langage souhaités.</p>
-        </section>
-
-        <section class="main">
-            <h2>Créez votre discours</h2>
-            <div id="Option">
-                <div class="occation">
-                    <label>Thèmes</label>
-                    <select id="occasion">
-                        <option value="anniversaire">Anniversaire</option>
-                        <option value="mariage">Mariage</option>
-                        <option value="discours_professionnel">Discours professionnel</option>
-                        <option value="demission">Lettre de demission</option>
-                        <option value="motivation">Lettre de motivation</option>
-                    </select>
-                </div>
-                <div class="chaleur">
-                    <label>Langage souhaité</label>
-                    <select id="chaleur">
-                        <option value="tfaible">Banlieusard</option>
-                        <option value="faible">Humoristique</option>
-                        <option value="moyen" selected>Français courant</option>
-                        <option value="haut">Langage Soutenue</option>
-                        <option value="haut">Langage littéraire </option>
-                    </select>
-                </div>
-            </div>
-            <label for="subject">Sujet :</label>
-            <input type="text" id="subject" name="subject" placeholder="Entrez le sujet de votre discours">
-            <label for="keywords">Points clés :</label>
-            <input type="text" id="keywords" name="keywords" placeholder="Entrez quelques points clés">
-        </section>
-        <button id="generateButton">Valider</button>
-        <section>
             <div class="area">
-                <div class="first">
-                    <h2>Discours généré</h2>
-                    <textarea id="generatedSpeech" readonly></textarea>
+                <div class="first" >
+                    <div id="button-container"></div>
+                    <div  class="margin">                    <h2>Instructions</h2>
+                        <p>Entrez votre sujet et quelques points clés, puis cliquez sur 'Valider' pour obtenir un discours généré dans le thèmes et le langage souhaités.</p></div>
+
+                    <div id="options-container" class="margin"></div>
+                    <div class="areaGenerate">
+                        <h2>Discours généré</h2>
+                        <textarea id="generatedSpeech" readonly></textarea>
+                    </div>
                 </div>
             </div>
         </section>
