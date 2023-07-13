@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Création de discours avec ChatGPT-4</title>
+    <title>Création de discours</title>
     <link rel="stylesheet" href="./styles/styles.css">
     <!-- <link rel="stylesheet" href="https://cdn.remixicon.com/releases/v2.5.0/remixicon.css"> -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,40 +12,41 @@
 </head>
 <body>
     <header>
-        <!-- <nav><ul>
-            <li><a href="./index.html" class="active">Générateur de discours </a></li>
-            <li><a href="./correcteur.html" activ>Correcteur orthographique</a></li>
-            <li><a href="./traducteur.html">Traducteur</a></li>
-        </ul></nav> -->
         <h1>Création de discours personnalisés</h1>
+        <div id="button-container"></div>
     </header>
     <main id="center">
         <section>
             <div class="area">
                 <div class="first" >
-                    <div id="button-container"></div>
-                    <div  class="margin instruction">
-                        <div  class="margin">
+                    <div  class="margin">
+                        <div  class="margin instruction">
                             <h3>A propos de nous</h3>
-                            <p>Découvrez SpeechGenius, le site ultime pour générer rapidement des discours et des lettres personnalisées ! <br> Gagnez du temps et facilitez votre vie grâce à notre plateforme pratique et intuitive.</p><br>
-                            <p>Nos modèles préétablis couvrent toutes les occasions, que ce soit une lettre d'anniversaire, un discours de mariage, un discours professionnel, une lettre de démission ou une lettre de motivation. Il vous suffit de sélectionner le type de message souhaité, de fournir quelques informations clés, et SpeechGenius créera un contenu unique et percutant pour vous.</p><br>
+                            <p>Bienvenue sur le site ultime pour générer rapidement des <span class="green">discours et des lettres personnalisées</span> ! <br> Gagnez du temps et facilitez votre vie grâce à notre plateforme pratique et intuitive.</p><br>
+                            <p>Nos modèles préétablis couvrent toutes les occasions, que ce soit une lettre d'anniversaire, un discours de mariage, un discours professionnel, une lettre de démission ou une lettre de motivation. Il vous suffit de sélectionner le type de message souhaité, de fournir quelques informations clés, et on vous créera un contenu <span class="green">unique</span> et <span class="green">percutant</span> pour vous.</p><br>
                             <p>Nous garantissons des discours et des lettres de haute qualité qui captiveront votre public ou transmettront votre message avec professionnalisme. Votre vie privée est également notre priorité, vos données personnelles sont sécurisées et confidentielles.</p><br>
-                            <p>Rejoignez dès maintenant la communauté de SpeechGenius et impressionnez avec des discours et des lettres uniques en un temps record !</p>
+                            <p>Rejoignez dès maintenant la communauté et <span class="green">impressionnez</span> avec des <span class="green">discours et des lettres uniques</span> en un temps record !</p>
+                        </div>
+                        <div  class="margin ">
+                            <h2>Instructions</h2>
+                            <p>Entrez votre sujet et quelques points clés, puis cliquez sur 'Générer' pour obtenir un discours généré dans le thèmes et le langage souhaités.</p>
                         </div>
                     </div>
-                    <div id="options-container" class="margin"></div>
-                    <div  class="">
-                        <h2>Instructions</h2>
-                        <p>Entrez votre sujet et quelques points clés, puis cliquez sur 'Valider' pour obtenir un discours généré dans le thèmes et le langage souhaités.</p>
-                    </div>
-                    <div class="areaGenerate">
-                        <h2>Discours généré</h2>
-                        <textarea id="generatedSpeech" readonly></textarea>
+                    <div class="margin arealog">
+                        <div id="options-container" class="margin"></div>
                     </div>
                 </div>
             </div>
+            <div class="areaGenerate">
+                <h3>Discours généré</h3>
+                <textarea id="generatedSpeech" readonly></textarea>
+                <button id="buttonCopy" class="buttonStyle">Copier</button>
+            </div>
         </section>
     </main>
-    <script src="./scripts/scripts.js"></script>
+    <div class="alert">
+        <p id="alertGenerate"></p>
+    </div>
 </body>
+<script src="./scripts/scripts.js"></script>
 </html>

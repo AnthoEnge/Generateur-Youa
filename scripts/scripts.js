@@ -1,7 +1,10 @@
 // testsk-swuHba87C2cxxhTnu2CcT3BlbkFJfQcO7pBpjaHBFzRJcQqv
 let apiKey = ""
+let arealog = document.querySelector('.arealog')
 let areaGenerate = document.querySelector('.areaGenerate')
+let instruction = document.querySelector('.instruction')
 areaGenerate.style.display ='none'
+arealog.style.display ='none'
 // APPEL API
 const generateSpeech = async (prompt) => {
   const response = await fetch("https://api.openai.com/v1/engines/text-davinci-002/completions", {
@@ -48,7 +51,7 @@ function clickOnGenerate(config){
   const button = document.getElementById("generateButton")
   let nameButton = button.textContent;
   button.addEventListener("click", async () => {
-    let configMessage = 'Tu doit me généré le message en un seul message uniquement. '
+    let configMessage = 'Tu doit me généré une réponse en un seul message uniquement. '
     loadButton()
     if (config === 'anniversaire') {
       const input = document.querySelector(".input").value;
@@ -59,8 +62,8 @@ function clickOnGenerate(config){
         removeLoadButton(nameButton)
         return alert('Remplissez les champs requis')
       } else {
-        prompt = configMessage + `Génére un discours d'anniversaire pour ${input}, qui célèbre aujourd'hui son ${input1} anniversaire. Lien avec la personne: ${input2}, et c'est un moment spécial pour célébrer cette journée importante dans sa vie. Composez un discours chaleureux et inspirant pour lui exprimer vos vœux d'anniversaire et partager des souvenirs et des anecdotes qui lui sont chers. Soyez attentionné, sincère et assurez-vous de transmettre toute votre affection et votre joie lors de cette occasion spéciale, m'ont prénom = ${input3}.
-        `
+        prompt = `Géné un discours d'anniversaire pour ${input}, qui célèbre aujourd'hui son ${input1} anniversaire. Lien avec la personne: ${input2}, et c'est un moment spécial pour célébrer cette journée importante dans sa vie. Composez un discours chaleureux et inspirant pour lui exprimer vos vœux d'anniversaire et partager des souvenirs et des anecdotes qui lui sont chersre. Soyez attentionné, sincère et assurez-vous de transmettre toute votre affection et votre joie lors de cette occasion spéciale, mon prénom = ${input3}.` + configMessage
+        
         console.log(prompt);
       }
     }
@@ -122,8 +125,8 @@ function clickOnGenerate(config){
         console.log(prompt);
       }
     }
+    areaGenerate.style.display = 'flex';
     // Générer le discours avec l'aide de ChatGPT-4
-    areaGenerate.style.display = 'block'
     const generatedSpeech = await generateSpeech(prompt);
     // Afficher le discours généré dans la zone de texte
     generatedSpeechTextarea.value = generatedSpeech;
@@ -159,6 +162,7 @@ function optionSelected(optionValue) {
   input4.className = "input4";
   var button = document.createElement("button");
   button.id ='generateButton'
+  button.className = 'buttonStyle'
   // Supprimer les éléments précédents (s'il y en a)
   var container = document.getElementById("options-container");
   container.innerHTML = "";
@@ -168,6 +172,7 @@ function optionSelected(optionValue) {
     h3.textContent = "Génére ton discours d'" + optionValue
     input.placeholder = "Nom de la personne";
     input1.placeholder = "Age de la personne";
+    input1.type = "number";
     input2.placeholder = "Lien avec la personne";
     input2.placeholder = "Ton prénom";
     button.innerText = "Générer le message d'anniversaire";
@@ -242,10 +247,53 @@ options.forEach(function(option) {
   var button = document.createElement("button");
   button.innerText = option.label;
   button.addEventListener("click", function() {
-    instruction.style.display = 'none'
+    arealog.style.display = 'flex';
+    instruction.style.display = 'none';
     optionSelected(option.value);
     let config = option.value
     clickOnGenerate(config)
+    button.classList.add("actif");
+    var buttonContainer = document.getElementById("button-container");
+    var otherButtons = Array.from(buttonContainer.querySelectorAll(".actif"));
+    otherButtons.forEach(function(otherButton) {
+      if (otherButton !== button) {
+        otherButton.classList.remove("actif");
+      }
+  })
   });
   buttonContainer.appendChild(button);
 });
+
+const textarea = document.getElementById('myTextarea');
+const buttonCopy = document.getElementById('buttonCopy');
+
+buttonCopy.addEventListener('click', () => {
+  alertGeneration('Texte Copié')
+  const generatedSpeechTextarea = document.getElementById("generatedSpeech");
+  generatedSpeechTextarea.select();
+  document.execCommand('copy');
+  generatedSpeechTextarea.blur();
+  console.log('Texte Copier');
+});
+
+function alertGeneration(text) {
+  let alertDiv = document.querySelector('.alert')
+  alertDiv.style.display = 'flex'
+  let alertP = document.querySelector('#alertGenerate')
+  alertP.innerHTML = text
+  setTimeout(() => {
+    alertDiv.style.display = 'none'
+  },1000)
+}
+
+let title = document.querySelector('h1')
+title.addEventListener('click', () => {
+  let instruction = document.querySelector('.instruction');
+  instruction.style.display = 'block';
+  areaGenerate.style.display ='none'
+  arealog.style.display ='none'
+  var buttonActif = document.querySelector(".actif");
+  buttonActif.classList.remove("actif");
+    
+
+})
