@@ -1,4 +1,4 @@
-// testsk-swuHba87C2cxxhTnu2CcT3BlbkFJfQcO7pBpjaHBFzRJcQqv
+
 let apiKey = ""
 let arealog = document.querySelector('.arealog')
 let areaGenerate = document.querySelector('.areaGenerate')
